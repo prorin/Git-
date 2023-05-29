@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" rel="stylesheet" />
+    <title>shop</title>
+</head>
+
+<body>
+    <script th:href="@{/webjars/jquery/3.5.0/js/jquery.min.js}"></script>
+    <script th:href="@{/webjars/bootstrap/4.4.1-1/js/bootstrap.min.js}"></script>
+
+    <div class="container">
+        <!-- 在庫一覧表示 -->
+        <h1>◇ 返却選択画面 ◇</h1>
+        <form action="#" th:action="@{/main/return/select/result}" th:object="${returnSelectForm}"
+            method="post">
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th>選択</th>
+                    <th>タイトル</th>
+                    <th>大ジャンル</th>
+                    <th>小ジャンル</th>
+                    <th>巻数</th>
+                    <th>ステータス</th>
+                </tr>
+                <tr th:each=" inventorycontrol,stat : *{inventoryList}">
+                    <td><input type="checkbox" th:value="${inventorycontrol.id}" th:name="rentalSetList[__${stat.index}__].id" class="btn-primary">
+                        <!--うえのtdの中身と下のtdはセットで-->
+                        <!--idはチェックボックス、statusIdはhiddenは全部データを渡している。-->
+                    <input type="hidden" th:name="rentalSetList[__${stat.index}__].statusId"  th:value="${inventorycontrol.statusId}">
+                    </td>
+                    <td th:text="${inventorycontrol.titleName}"></td>
+                    <td th:text="${inventorycontrol.bigGenre}"></td>
+                    <td th:text="${inventorycontrol.smallGenre}"></td>
+                    <td th:text="${inventorycontrol.turns}"></td>
+                    <td th:text="${inventorycontrol.status}"></td>
+                </tr>
+            </table>
+
+
+            <P>タイトル
+                <input type="text" name="titleName" th:value="*{titleName}" class="form-control"
+                    placeholder="タイトルを入力"></input>
+            </P>
+            <p>大ジャンル
+                <select name="bigGenreId" class="custom-select">
+                    <!-- divでもできるよ -->
+                    <!--/* <div th:each="ageMaster : *{agelist}"> */-->
+                    <option th:value="${bigGenre.bigGenreId}" th:each="bigGenre : *{bigGenreList}"
+                        th:text="${bigGenre.bigGenre}">
+                    </option>
+                    <!-- /*</div> */-->
+                </select>
+            </p>
+            <p>小ジャンル
+                <select name="smallGenreId" class="custom-select">
+                    <!-- divでもできるよ -->
+                    <!--/* <div th:each="ageMaster : *{agelist}"> */-->
+                    <option th:value="${smallGenre.smallGenreId}" th:each="smallGenre : *{smallGenreList}"
+                        th:text="${smallGenre.smallGenre}">
+                    </option>
+                    <!-- /*</div> */-->
+                </select>
+            </p>
+            <input type="submit" value="返却" name="return" class="btn btn-dark">
+            <input type="submit" value="検索" name="select" class="btn btn-success">
+        </form>
+
+
+        <form action="#" th:action="@{/main/inventoryControl}" method="post">
+
+            <input type="submit" value="在庫管理TOPへ戻る" class="btn btn-danger">
+        </form>
+    </div>
+</body>
+
+</html>
