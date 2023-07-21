@@ -4,16 +4,18 @@
 <head>
     <meta charset="utf-8">
 
-    <link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet">
-    </link>
-    <script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
-    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
-
+    <link th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" rel="stylesheet" />
+</link>
+  
     <title>login</title>
 </head>
 <!-- /*　メインTOP画面　*/ -->
 
 <body>
+
+ <script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+ <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+
     <h1>メインTOP</h1>
     <form action="#" th:action="@{/main/customerInformation}" th:object="${rentalForm}" method="post">
 
