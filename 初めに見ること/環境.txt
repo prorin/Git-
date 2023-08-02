@@ -1,0 +1,15 @@
+環境
+
+エディター
+Visual Studio Code
+
+使用言語
+Java
+バージョン:jdk-18
+
+フレームワーク　Spring Boot Dashboard
+バージョン:v0.13.1
+
+DB
+PostgreSQL
+バージョン:2.17.1

@@ -1,0 +1,103 @@
+agemaster
+ageid	age
+1	20
+2	21
+3	22
+4	23
+5	24
+6	25
+7	26
+8	27
+9	28
+10	29
+11	30
+12	31
+13	32
+14	33
+15	34
+16	35
+17	36
+18	37
+19	38
+20	39
+21	40
+22	41
+23	42
+24	43
+25	44
+26	45
+27	46
+28	47
+29	48
+30	49
+31	50
+32	51
+33	52
+34	53
+35	54
+36	55
+37	56
+38	57
+39	58
+40	59
+41	60
+42	61
+43	62
+44	63
+45	64
+46	65
+47	66
+48	67
+49	68
+50	69
+51	70
+
+
+gendermaster
+genderid	gender
+1	男
+2	女
+
+
+inventorycontrol
+titlename	biggenre	smallgenre	turns	status	id
+ナルト	1	1	1	1	1
+ブリーチ	1	1	1	2	2
+
+
+
+biggenremaster
+biggenreid	biggenre
+1	アニメ
+2	国内ドラマ
+3	海外ドラマ
+4	邦画（映画）
+5	洋画（映画）
+
+
+customermanagement
+customername	phonenumber	ageid	genderid	address	id
+ああああ	09000000000	1	1	北海道札幌市東区北	1
+いいいい	08000000000	9	1	北海道札幌市西区	4
+
+
+smallgenre
+smallgenreid	smallgenre
+1	アクション
+2	ホラー
+3	サスペンス
+4	バラエティ
+5	スポーツ
+6	お笑い
+7	SF
+8	ファンタジー
+9	特撮
+10	恋愛
+11	ミステリー
+
+status
+statusid	status
+1	貸出可
+2	貸出中
+3	貸出不可（傷あり）
+
