@@ -1,0 +1,60 @@
+--トランマスタDDL
+
+--ジャンルマスタ
+create table public.smallgenre (
+  smallgenreid integer
+  , smallgenre character varying(100)
+);
+
+--分類マスタ
+create table public.biggenre (
+  biggenreid integer
+  , biggenre character varying(100)
+);
+
+--ジャンルマスタ
+create table public.genremaster (
+  id integer
+  , genre character varying(100)
+);
+
+--性別マスタ
+create table public.gendermaster (
+  genderid integer
+  , gender character varying(100)
+);
+
+--年齢管理マスタ
+create table public.agemaster (
+  ageid integer
+  , age character varying(100)
+);
+
+--ステータスマスタ
+create table public.status (
+  statusid integer
+  , status character varying(100)
+);
+
+--トラン在庫管理
+create table public.inventorycontrol (
+  titlename character varying(100)
+  , biggenre integer
+  , smallgenre integer
+  , turns integer
+  , status integer
+  , id integer not null
+  , primary key (id)
+);
+
+
+--トラン顧客管理
+create table public.customermanagement (
+  customername character varying(100)
+  , phonenumber character varying(100)
+  , ageid integer
+  , genderid integer
+  , address character varying(100)
+  , id integer not null
+  , primary key (id)
+);
